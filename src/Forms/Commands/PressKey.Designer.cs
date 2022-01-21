@@ -30,13 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtKey1 = new System.Windows.Forms.TextBox();
-            this.txtKey2 = new System.Windows.Forms.TextBox();
-            this.txtKey3 = new System.Windows.Forms.TextBox();
             this.txtDuration = new System.Windows.Forms.TextBox();
+            this.cmbKey1 = new System.Windows.Forms.ComboBox();
+            this.cmbKey2 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbKey3 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -54,23 +54,12 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(81, 39);
+            this.label3.Location = new System.Drawing.Point(123, 39);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(19, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "+";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(166, 39);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(19, 20);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "+";
             // 
             // label5
             // 
@@ -94,33 +83,6 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Hold Duration:";
             // 
-            // txtKey1
-            // 
-            this.txtKey1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtKey1.Location = new System.Drawing.Point(22, 37);
-            this.txtKey1.Name = "txtKey1";
-            this.txtKey1.Size = new System.Drawing.Size(52, 22);
-            this.txtKey1.TabIndex = 12;
-            this.txtKey1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AssignKey);
-            // 
-            // txtKey2
-            // 
-            this.txtKey2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtKey2.Location = new System.Drawing.Point(107, 37);
-            this.txtKey2.Name = "txtKey2";
-            this.txtKey2.Size = new System.Drawing.Size(52, 22);
-            this.txtKey2.TabIndex = 12;
-            this.txtKey2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AssignKey);
-            // 
-            // txtKey3
-            // 
-            this.txtKey3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtKey3.Location = new System.Drawing.Point(192, 37);
-            this.txtKey3.Name = "txtKey3";
-            this.txtKey3.Size = new System.Drawing.Size(52, 22);
-            this.txtKey3.TabIndex = 12;
-            this.txtKey3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AssignKey);
-            // 
             // txtDuration
             // 
             this.txtDuration.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -129,17 +91,61 @@
             this.txtDuration.Size = new System.Drawing.Size(136, 22);
             this.txtDuration.TabIndex = 12;
             // 
+            // cmbKey1
+            // 
+            this.cmbKey1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbKey1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbKey1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbKey1.FormattingEnabled = true;
+            this.cmbKey1.Location = new System.Drawing.Point(22, 36);
+            this.cmbKey1.Name = "cmbKey1";
+            this.cmbKey1.Size = new System.Drawing.Size(94, 28);
+            this.cmbKey1.TabIndex = 13;
+            // 
+            // cmbKey2
+            // 
+            this.cmbKey2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbKey2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbKey2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbKey2.FormattingEnabled = true;
+            this.cmbKey2.Location = new System.Drawing.Point(149, 36);
+            this.cmbKey2.Name = "cmbKey2";
+            this.cmbKey2.Size = new System.Drawing.Size(94, 28);
+            this.cmbKey2.TabIndex = 13;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(250, 39);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(19, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "+";
+            // 
+            // cmbKey3
+            // 
+            this.cmbKey3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbKey3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbKey3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbKey3.FormattingEnabled = true;
+            this.cmbKey3.Location = new System.Drawing.Point(276, 35);
+            this.cmbKey3.Name = "cmbKey3";
+            this.cmbKey3.Size = new System.Drawing.Size(94, 28);
+            this.cmbKey3.TabIndex = 13;
+            // 
             // PressKey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cmbKey3);
+            this.Controls.Add(this.cmbKey2);
+            this.Controls.Add(this.cmbKey1);
             this.Controls.Add(this.txtDuration);
-            this.Controls.Add(this.txtKey3);
-            this.Controls.Add(this.txtKey2);
-            this.Controls.Add(this.txtKey1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -153,12 +159,12 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtKey1;
-        private System.Windows.Forms.TextBox txtKey2;
-        private System.Windows.Forms.TextBox txtKey3;
         private System.Windows.Forms.TextBox txtDuration;
+        private System.Windows.Forms.ComboBox cmbKey1;
+        private System.Windows.Forms.ComboBox cmbKey2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbKey3;
     }
 }

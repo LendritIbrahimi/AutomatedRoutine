@@ -15,14 +15,28 @@ namespace AutomatedRoutine.Controls
         public PressKey()
         {
             InitializeComponent();
+            InitializeKeyList(new ComboBox[] { cmbKey1,cmbKey2,cmbKey3 });
             this.Text = "Press Key";
         }
 
+        private void InitializeKeyList(ComboBox[] keycmb)
+        {
+            foreach (ComboBox key in keycmb)
+            {
+                
+                key.DropDownStyle = ComboBoxStyle.DropDownList;
+                key.BindingContext = new BindingContext();
+                key.DisplayMember = nameof(KeyItem.Name);
+                key.ValueMember = nameof(KeyItem.KeyCode);
+                key.DataSource = KeyItem.List;
+                key.SelectedIndex = 0;
+            }
+        }
         private void AssignKey(object sender, KeyPressEventArgs e)
         {
 
-           ((TextBox)sender).Text = e.KeyChar.ToString(); ;
-            
+            ((TextBox)sender).Text = e.KeyChar.ToString(); ;
+
         }
     }
 }
