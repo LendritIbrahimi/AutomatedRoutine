@@ -10,17 +10,36 @@ using System.Windows.Forms;
 
 namespace AutomatedRoutine
 {
-    public partial class ColorSelect : UserControl
+
+    public partial class ColorSelect : UserControl, ICommand
     {
         public Color GetColor;
         public int SkipLoop = -1;
-        public bool giveXValue=false, giveYValue = false;
+        public bool giveXValue = false, giveYValue = false;
         public ColorSelect()
         {
             InitializeComponent();
             this.Text = "Select Color";
             GetColor = pnlShowColor.BackColor;
         }
+
+        public void RunCommand()
+        {
+            //Color CheckColor = mainPanel.Controls.OfType<ColorSelect>().First().GetColor;
+            //int skipLoop = mainPanel.Controls.OfType<ColorSelect>().First().SkipLoop;
+            //if (mainPanel.Controls.OfType<ColorSelect>().First().giveXValue)
+            //    posX = Cursor.Position.X;
+            //if (mainPanel.Controls.OfType<ColorSelect>().First().giveXValue)
+            //    posY = Cursor.Position.Y;
+
+            //if (Screen.CheckColorAtPosition(Cursor.Position, CheckColor))
+            //    if (skipLoop == 0)
+            //        i += comControl.Count;
+            //    else
+            //        i += skipLoop;
+            MessageBox.Show("Color Selected");
+        }
+
 
         private void BtnShowColor_Click(object sender, EventArgs e)
         {

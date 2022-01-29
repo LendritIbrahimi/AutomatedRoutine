@@ -10,15 +10,20 @@ using System.Windows.Forms;
 
 namespace AutomatedRoutine
 {
-    public partial class MoveMouse : UserControl
+    public partial class MoveMouse : UserControl, ICommand
     {
-        public int x = -1, y = -1, time = 0;
+        private int posX = -1, posY = -1, time = 0;
 
         private void GiveValues(object sender, EventArgs e)
         {
-            int.TryParse(mtxXCord.Text, out x);
-            int.TryParse(mtxYCord.Text, out y);
+            int.TryParse(mtxXCord.Text, out posX);
+            int.TryParse(mtxYCord.Text, out posY);
             int.TryParse(mtxTime.Text, out time);
+        }
+
+        public void RunCommand()
+        {
+            Mouse.Move(posX, posY, time);
         }
 
         public MoveMouse()

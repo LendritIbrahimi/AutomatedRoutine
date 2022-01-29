@@ -94,24 +94,24 @@
             // cmbKey1
             // 
             this.cmbKey1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbKey1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbKey1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbKey1.FormattingEnabled = true;
             this.cmbKey1.Location = new System.Drawing.Point(22, 36);
             this.cmbKey1.Name = "cmbKey1";
             this.cmbKey1.Size = new System.Drawing.Size(94, 28);
             this.cmbKey1.TabIndex = 13;
+            this.cmbKey1.TextChanged += new System.EventHandler(this.UpdateKeys);
             // 
             // cmbKey2
             // 
             this.cmbKey2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbKey2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbKey2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbKey2.FormattingEnabled = true;
             this.cmbKey2.Location = new System.Drawing.Point(149, 36);
             this.cmbKey2.Name = "cmbKey2";
             this.cmbKey2.Size = new System.Drawing.Size(94, 28);
             this.cmbKey2.TabIndex = 13;
+            this.cmbKey2.TextChanged += new System.EventHandler(this.UpdateKeys);
             // 
             // label2
             // 
@@ -127,13 +127,13 @@
             // cmbKey3
             // 
             this.cmbKey3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbKey3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbKey3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbKey3.FormattingEnabled = true;
             this.cmbKey3.Location = new System.Drawing.Point(276, 35);
             this.cmbKey3.Name = "cmbKey3";
             this.cmbKey3.Size = new System.Drawing.Size(94, 28);
             this.cmbKey3.TabIndex = 13;
+            this.cmbKey3.TextChanged += new System.EventHandler(this.UpdateKeys);
             // 
             // PressKey
             // 

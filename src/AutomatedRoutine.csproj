@@ -51,6 +51,7 @@
     <Compile Include="Classes\Commands\Keyboard.cs" />
     <Compile Include="Classes\Commands\Mouse.cs" />
     <Compile Include="Classes\Commands\Screen.cs" />
+    <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Classes\Misc\Command.cs" />
     <Compile Include="Classes\Misc\CommandInstances.cs" />
     <Compile Include="Classes\Misc\KeyItem.cs" />

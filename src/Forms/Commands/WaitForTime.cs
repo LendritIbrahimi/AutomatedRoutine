@@ -10,13 +10,17 @@ using System.Windows.Forms;
 
 namespace AutomatedRoutine
 {
-    public partial class WaitForTime : UserControl
+    public partial class WaitForTime : UserControl, ICommand
     {
-        public int time = 0;
+        private int time = 0;
 
         private void GiveValues(object sender, EventArgs e)
         {
             int.TryParse(mtxTime.Text, out time);
+        }
+        public void RunCommand()
+        {
+            Thread.WaitForTime(time);
         }
 
         public WaitForTime()

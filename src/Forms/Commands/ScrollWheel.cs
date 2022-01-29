@@ -10,18 +10,21 @@ using System.Windows.Forms;
 
 namespace AutomatedRoutine
 {
-    public partial class ScrollWheel : UserControl
+    public partial class ScrollWheel : UserControl, ICommand
     {
-        public int y = 0;
+        private int y = 0;
         public ScrollWheel()
         {
             InitializeComponent();
             this.Text = "Scroll Mouse";
         }
-
+        public void RunCommand()
+        {
+            Mouse.ScrollWheel((uint)y);
+        }
         private void MtxYCord_Leave(object sender, EventArgs e)
         {
-            int.TryParse(mtxYCord.Text,out y);
+            int.TryParse(mtxYCord.Text, out y);
         }
     }
 }
