@@ -37,12 +37,18 @@ class Mouse
             float loopLength = t / 10;
             float moveX = Cursor.Position.X, moveY = Cursor.Position.Y;
             float moveIntX = (x - moveX) / loopLength, moveIntY = (y - moveY) / loopLength;
-            for (int i = 0; i < loopLength; i++)
+            for (int i = 0; i < loopLength;)
             {
+                //if (Cursor.Position.X != moveX || Cursor.Position.Y != moveY)
+                //{
+                //    Thread.WaitForTime(4000);
+                //    continue;
+                //}
                 moveX += moveIntX;
                 moveY += moveIntY;
                 Cursor.Position = new Point((int)moveX, (int)moveY);
-                Thread.WaitForTime(10);
+                Thread.Sleep(10);
+                i++;
             }
         }
         Cursor.Position = new Point(x, y);

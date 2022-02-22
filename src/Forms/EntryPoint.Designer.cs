@@ -31,13 +31,21 @@ partial class EntryPoint
             this.btnStart = new System.Windows.Forms.Button();
             this.pnlContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 24);
+            this.label2.Location = new System.Drawing.Point(13, 39);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 20);
@@ -51,7 +59,7 @@ partial class EntryPoint
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.ForeColor = System.Drawing.Color.White;
-            this.btnStart.Location = new System.Drawing.Point(13, 456);
+            this.btnStart.Location = new System.Drawing.Point(13, 471);
             this.btnStart.Margin = new System.Windows.Forms.Padding(4);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(164, 52);
@@ -65,7 +73,7 @@ partial class EntryPoint
             this.pnlContainer.AutoScroll = true;
             this.pnlContainer.BackColor = System.Drawing.Color.White;
             this.pnlContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlContainer.Location = new System.Drawing.Point(14, 48);
+            this.pnlContainer.Location = new System.Drawing.Point(14, 63);
             this.pnlContainer.Margin = new System.Windows.Forms.Padding(4);
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Padding = new System.Windows.Forms.Padding(5);
@@ -79,7 +87,7 @@ partial class EntryPoint
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(894, 456);
+            this.btnAdd.Location = new System.Drawing.Point(894, 471);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(160, 38);
@@ -87,6 +95,62 @@ partial class EntryPoint
             this.btnAdd.Text = "+ Add Another";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsOpen,
+            this.tsSave,
+            this.tsExit});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // tsOpen
+            // 
+            this.tsOpen.Name = "tsOpen";
+            this.tsOpen.Size = new System.Drawing.Size(224, 26);
+            this.tsOpen.Text = "Open";
+            // 
+            // tsSave
+            // 
+            this.tsSave.Image = global::AutomatedRoutine.Properties.Resources.save;
+            this.tsSave.Name = "tsSave";
+            this.tsSave.Size = new System.Drawing.Size(224, 26);
+            this.tsSave.Text = "Save";
+            this.tsSave.Click += new System.EventHandler(this.tsSave_Click);
+            // 
+            // tsExit
+            // 
+            this.tsExit.Name = "tsExit";
+            this.tsExit.Size = new System.Drawing.Size(224, 26);
+            this.tsExit.Text = "Exit";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewHelpToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // viewHelpToolStripMenuItem
+            // 
+            this.viewHelpToolStripMenuItem.Name = "viewHelpToolStripMenuItem";
+            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
+            this.viewHelpToolStripMenuItem.Text = "View Help";
             // 
             // EntryPoint
             // 
@@ -98,12 +162,16 @@ partial class EntryPoint
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "EntryPoint";
             this.ShowIcon = false;
             this.Text = "Routine";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,5 +182,12 @@ partial class EntryPoint
     private System.Windows.Forms.Button btnStart;
     private System.Windows.Forms.FlowLayoutPanel pnlContainer;
     private System.Windows.Forms.Button btnAdd;
+    private System.Windows.Forms.MenuStrip menuStrip1;
+    private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem tsOpen;
+    private System.Windows.Forms.ToolStripMenuItem tsSave;
+    private System.Windows.Forms.ToolStripMenuItem tsExit;
+    private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem viewHelpToolStripMenuItem;
 }
 

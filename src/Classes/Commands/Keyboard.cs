@@ -10,9 +10,17 @@ using System.Runtime.InteropServices;
 
 class Keyboard
 {
+    [DllImport("User32.dll")]
+    static extern int SetForegroundWindow(IntPtr point);
     public static void KeyPress(string key)
     {
-        SendKeys.Send(key);
+        System.Diagnostics.Process p = System.Diagnostics.Process.GetProcessesByName("dota2").FirstOrDefault();
+        if (p != null)
+        {
+            IntPtr h = p.MainWindowHandle;
+            SetForegroundWindow(h);
+            SendKeys.SendWait(key);
+        }
     }
     public static string FormatKeyStringArray(List<string> keys)
     {

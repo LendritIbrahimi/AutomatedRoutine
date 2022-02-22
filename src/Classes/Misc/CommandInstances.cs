@@ -1,21 +1,25 @@
 ﻿using AutomatedRoutine;
-using AutomatedRoutine.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using CommandUserControl;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 static class CommandInstances
 {
     public static List<Command> Get()
     {
         List<Command> dataSource = new List<Command>();
-        dataSource.Add(new Command(new MoveMouse(), 1));
-        dataSource.Add(new Command(new PressKey(), 2));
-        dataSource.Add(new Command(new WaitForTime(), 3));
-        dataSource.Add(new Command(new ColorSelect(), 4));
-        dataSource.Add(new Command(new ScrollWheel(), 5));
-        dataSource.Add(new Command(null, 6, "Break"));
+
+
+        List<Type> controls = ControlsFinder.FindControls(Assembly.GetExecutingAssembly(), "CommandUserControl");
+        foreach (Type type in controls)
+        {
+            dataSource.Add(new Command((UserControl)Activator.CreateInstance(type)));
+        }
         return dataSource;
     }
 }

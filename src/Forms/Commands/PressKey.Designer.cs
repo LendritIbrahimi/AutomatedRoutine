@@ -1,4 +1,4 @@
-﻿namespace AutomatedRoutine.Controls
+﻿namespace CommandUserControl
 {
     partial class PressKey
     {
@@ -139,6 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.cmbKey3);
             this.Controls.Add(this.cmbKey2);
             this.Controls.Add(this.cmbKey1);

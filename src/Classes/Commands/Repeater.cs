@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-interface ICommand
+static class Repeater
 {
-    void Run();
-    string Serialize();
+    public static int Repetitions { get; set; } = 1;
 }

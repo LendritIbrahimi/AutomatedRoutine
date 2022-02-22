@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AutomatedRoutine
+namespace CommandUserControl
 {
     public partial class ScrollWheel : UserControl, ICommand
     {
@@ -18,7 +18,7 @@ namespace AutomatedRoutine
             InitializeComponent();
             this.Text = "Scroll Mouse";
         }
-        public void RunCommand()
+        public void Run()
         {
             Mouse.ScrollWheel((uint)y);
         }

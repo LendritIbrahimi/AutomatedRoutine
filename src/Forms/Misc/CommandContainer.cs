@@ -18,6 +18,7 @@ namespace AutomatedRoutine
         {
             InitializeComponent();
             AddToComboBox();
+            CheckForIllegalCrossThreadCalls = false;
         }
         public List<Command> GetData()
         {
@@ -26,14 +27,14 @@ namespace AutomatedRoutine
 
         private void AddToComboBox()
         {
-            this.dataSource = CommandInstances.Get();
+            dataSource = CommandInstances.Get();
             // setup data binding
-            this.cmbMain.DataSource = this.dataSource;
-            this.cmbMain.DisplayMember = "Name";
-            this.cmbMain.ValueMember = "Value";
+            cmbMain.DataSource = this.dataSource;
+            cmbMain.DisplayMember = "Name";
+            cmbMain.ValueMember = "Name";
 
             // make it read-only
-            this.cmbMain.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbMain.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void cmbMain_SelectedIndexChanged(object sender, EventArgs e)

@@ -5,33 +5,34 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
-namespace AutomatedRoutine
+namespace CommandUserControl
 {
     public partial class WaitForTime : UserControl, ICommand
     {
-        private int time = 0;
 
-        private void GiveValues(object sender, EventArgs e)
+        private int time = 0;
+        public void Run()
         {
-            int.TryParse(mtxTime.Text, out time);
+            if (!int.TryParse(txtTime.Text, out time))
+                time = 1000;
+            Thread.Sleep(time);
         }
-        public void RunCommand()
+        public string Serialize()
         {
-            Thread.WaitForTime(time);
+            string output = "<WaitForTime>\n";
+
+            output += "\t<time>" + time + "</time>\n";
+            output += "</WaitForTime>\n";
+            return output;
         }
 
         public WaitForTime()
         {
             InitializeComponent();
             this.Text = "Wait";
-        }
-
-        private void ClearNotEmpty(object sender, EventArgs e)
-        {
-            (sender as MaskedTextBox).Select(0, 0);
         }
     }
 }

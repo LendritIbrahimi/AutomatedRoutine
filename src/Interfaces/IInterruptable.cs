@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-interface ICommand
+interface IInterruptable
 {
-    void Run();
-    string Serialize();
+    void Interrupt();
+
 }

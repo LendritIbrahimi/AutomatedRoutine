@@ -1,4 +1,4 @@
-﻿namespace AutomatedRoutine
+﻿namespace CommandUserControl
 {
     partial class ScrollWheel
     {

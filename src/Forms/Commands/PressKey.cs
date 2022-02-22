@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AutomatedRoutine.Controls
+namespace CommandUserControl
 {
     public partial class PressKey : UserControl, ICommand
     {
@@ -20,12 +20,24 @@ namespace AutomatedRoutine.Controls
             InitializeKeyList(new ComboBox[] { cmbKey1, cmbKey2, cmbKey3 });
             this.Text = "Press Key";
         }
-        public void RunCommand()
+        public void Run()
         {
             if (KeyPressString.Equals(""))
                 return;
             Keyboard.KeyPress(KeyPressString);
         }
+
+        public string Serialize()
+        {
+            string output = "<PressKey>\n";
+            foreach (ComboBox key in KeySelected)
+            {
+                output += "\t<" + key.Name + ">" + key.Text + "</" + key.Name + ">\n";
+            }
+            output += "</PressKey>\n";
+            return output;
+        }
+
         private void InitializeKeyList(ComboBox[] keycmb)
         {
             foreach (ComboBox key in keycmb)

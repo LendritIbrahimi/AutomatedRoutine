@@ -3,13 +3,11 @@
 public struct Command
 {
     public string Name { get; }
-    public int Value { get; }
     public UserControl Control { get; }
 
-    public Command(UserControl control, int value, string name = "") : this()
+    public Command(UserControl control, string name = "") : this()
     {
         Control = control;
-        Value = value;
         if (name == "")
             Name = control.Text;
         else

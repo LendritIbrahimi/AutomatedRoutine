@@ -1,4 +1,4 @@
-﻿namespace AutomatedRoutine
+﻿namespace CommandUserControl
 {
     partial class MoveMouse
     {
@@ -122,9 +122,9 @@
             this.label5.Location = new System.Drawing.Point(387, 10);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 20);
+            this.label5.Size = new System.Drawing.Size(73, 20);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Duration:";
+            this.label5.Text = "Duration";
             // 
             // label1
             // 
@@ -133,9 +133,9 @@
             this.label1.Location = new System.Drawing.Point(11, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 20);
+            this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Position:";
+            this.label1.Text = "Position";
             // 
             // MoveMouse
             // 

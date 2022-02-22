@@ -50,18 +50,20 @@
   <ItemGroup>
     <Compile Include="Classes\Commands\Keyboard.cs" />
     <Compile Include="Classes\Commands\Mouse.cs" />
+    <Compile Include="Classes\Commands\Repeater.cs" />
     <Compile Include="Classes\Commands\Screen.cs" />
+    <Compile Include="Classes\Misc\ControlsFinder.cs" />
+    <Compile Include="Classes\Misc\Serialize.cs" />
+    <Compile Include="Forms\Commands\MouseClick.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Commands\MouseClick.Designer.cs">
+      <DependentUpon>MouseClick.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Classes\Misc\Command.cs" />
     <Compile Include="Classes\Misc\CommandInstances.cs" />
     <Compile Include="Classes\Misc\KeyItem.cs" />
-    <Compile Include="Classes\Misc\Thread.cs" />
-    <Compile Include="Forms\Commands\ColorSelect.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\Commands\ColorSelect.Designer.cs">
-      <DependentUpon>ColorSelect.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Misc\CommandContainer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,16 +94,11 @@
     <Compile Include="Forms\Commands\MoveMouse.Designer.cs">
       <DependentUpon>MoveMouse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IInterruptable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\Commands\ScrollWheel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\Commands\ScrollWheel.Designer.cs">
-      <DependentUpon>ScrollWheel.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Forms\Commands\ColorSelect.resx">
-      <DependentUpon>ColorSelect.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Commands\MouseClick.resx">
+      <DependentUpon>MouseClick.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Misc\CommandContainer.resx">
       <DependentUpon>CommandContainer.cs</DependentUpon>
@@ -128,9 +125,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Forms\Commands\ScrollWheel.resx">
-      <DependentUpon>ScrollWheel.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -145,8 +139,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
     <Folder Include="Styles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
