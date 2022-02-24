@@ -12,19 +12,24 @@ namespace CommandUserControl
 {
     public partial class MouseClick : UserControl, ICommand
     {
+        public string XMLName { get; } = "MouseClick";
+        public string FullName { get; } = "Mouse Click";
         public void Run()
         {
             Mouse.Click();
         }
         public string Serialize()
         {
-            return "<MouseClick>\n" +
-                "</MouseClick>\n";
+            return "<"+ XMLName + ">\n" +
+                "</" + XMLName + ">\n";
+        }
+        public ICommand Deserialize(string content)
+        {
+            return this;
         }
         public MouseClick()
         {
             InitializeComponent();
-            this.Text = "Mouse Click";
         }
     }
 }

@@ -28,22 +28,20 @@ class Mouse
         mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, X, Y, 0, 0);
     }
     #endregion
-    public static void Move(int x, int y, int t)
+    public static void Move(int x, int y, int t, bool incremental = false)
     {
         if (t != 0)
         {
             t = Math.Max(t, 1);
             t = Math.Min(t, 600000);
             float loopLength = t / 10;
-            float moveX = Cursor.Position.X, moveY = Cursor.Position.Y;
-            float moveIntX = (x - moveX) / loopLength, moveIntY = (y - moveY) / loopLength;
+            float moveX = Cursor.Position.X;
+            float moveY = Cursor.Position.Y;
+
+            float moveIntX = (incremental ? x : (x - moveX)) / loopLength;
+            float moveIntY = (incremental ? y : (y - moveY)) / loopLength;
             for (int i = 0; i < loopLength;)
             {
-                //if (Cursor.Position.X != moveX || Cursor.Position.Y != moveY)
-                //{
-                //    Thread.WaitForTime(4000);
-                //    continue;
-                //}
                 moveX += moveIntX;
                 moveY += moveIntY;
                 Cursor.Position = new Point((int)moveX, (int)moveY);
@@ -51,7 +49,8 @@ class Mouse
                 i++;
             }
         }
-        Cursor.Position = new Point(x, y);
+        if (!incremental)
+            Cursor.Position = new Point(x, y);
     }
 
     public static void ScrollWheel(uint y)

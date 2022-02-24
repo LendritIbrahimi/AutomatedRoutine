@@ -36,6 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.chbIncrement = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // mtxXCord
@@ -46,11 +47,10 @@
             this.mtxXCord.Margin = new System.Windows.Forms.Padding(4);
             this.mtxXCord.Name = "mtxXCord";
             this.mtxXCord.PromptChar = ' ';
-            this.mtxXCord.Size = new System.Drawing.Size(100, 22);
+            this.mtxXCord.Size = new System.Drawing.Size(67, 22);
             this.mtxXCord.TabIndex = 1;
             this.mtxXCord.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtxXCord.ValidatingType = typeof(int);
-            this.mtxXCord.Leave += new System.EventHandler(this.GiveValues);
             this.mtxXCord.MouseEnter += new System.EventHandler(this.ClearNotEmpty);
             // 
             // label2
@@ -68,14 +68,13 @@
             // 
             this.mtxYCord.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mtxYCord.HidePromptOnLeave = true;
-            this.mtxYCord.Location = new System.Drawing.Point(200, 35);
+            this.mtxYCord.Location = new System.Drawing.Point(146, 35);
             this.mtxYCord.Margin = new System.Windows.Forms.Padding(4);
             this.mtxYCord.Name = "mtxYCord";
             this.mtxYCord.PromptChar = ' ';
-            this.mtxYCord.Size = new System.Drawing.Size(100, 22);
+            this.mtxYCord.Size = new System.Drawing.Size(68, 22);
             this.mtxYCord.TabIndex = 3;
             this.mtxYCord.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.mtxYCord.Leave += new System.EventHandler(this.GiveValues);
             // 
             // label3
             // 
@@ -102,13 +101,12 @@
             this.mtxTime.TabIndex = 5;
             this.mtxTime.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtxTime.ValidatingType = typeof(int);
-            this.mtxTime.Leave += new System.EventHandler(this.GiveValues);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(172, 37);
+            this.label4.Location = new System.Drawing.Point(118, 37);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 20);
@@ -137,10 +135,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Position";
             // 
+            // chbIncrement
+            // 
+            this.chbIncrement.AutoSize = true;
+            this.chbIncrement.BackColor = System.Drawing.Color.Transparent;
+            this.chbIncrement.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.chbIncrement.FlatAppearance.BorderSize = 2;
+            this.chbIncrement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chbIncrement.Location = new System.Drawing.Point(238, 39);
+            this.chbIncrement.Name = "chbIncrement";
+            this.chbIncrement.Size = new System.Drawing.Size(99, 21);
+            this.chbIncrement.TabIndex = 7;
+            this.chbIncrement.Text = "Incremental";
+            this.chbIncrement.UseVisualStyleBackColor = false;
+            // 
             // MoveMouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.chbIncrement);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.mtxTime);
             this.Controls.Add(this.label3);
@@ -167,5 +180,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chbIncrement;
     }
 }

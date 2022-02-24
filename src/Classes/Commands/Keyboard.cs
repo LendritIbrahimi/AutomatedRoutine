@@ -14,13 +14,8 @@ class Keyboard
     static extern int SetForegroundWindow(IntPtr point);
     public static void KeyPress(string key)
     {
-        System.Diagnostics.Process p = System.Diagnostics.Process.GetProcessesByName("dota2").FirstOrDefault();
-        if (p != null)
-        {
-            IntPtr h = p.MainWindowHandle;
-            SetForegroundWindow(h);
-            SendKeys.SendWait(key);
-        }
+        SendKeys.Send(key);
+
     }
     public static string FormatKeyStringArray(List<string> keys)
     {
@@ -32,10 +27,8 @@ class Keyboard
         {
             if (key.Equals("None"))
                 continue;
-            output += "{" + key.ToUpper() + "}+";
+            output += key.ToUpper();
         }
-
-        output = output.Remove(output.Length - 1, 1);
 
         return output;
     }

@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace CommandUserControl
 {
     public partial class WaitForTime : UserControl, ICommand
     {
+        public string XMLName { get; } = "WaitForTime";
+        public string FullName { get; } = "Wait for Time";
 
         private int time = 0;
         public void Run()
@@ -22,17 +25,22 @@ namespace CommandUserControl
         }
         public string Serialize()
         {
-            string output = "<WaitForTime>\n";
+            string output = "<"+ XMLName + ">\n";
 
             output += "\t<time>" + time + "</time>\n";
-            output += "</WaitForTime>\n";
+            output += "</"+ XMLName + ">\n";
             return output;
         }
-
+        public ICommand Deserialize(string content)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(content);
+            txtTime.Text = doc.SelectSingleNode(XMLName + "/time").InnerText;
+            return this;
+        }
         public WaitForTime()
         {
             InitializeComponent();
-            this.Text = "Wait";
         }
     }
 }

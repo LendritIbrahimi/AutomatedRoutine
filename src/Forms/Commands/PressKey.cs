@@ -14,14 +14,21 @@ namespace CommandUserControl
     {
         private string KeyPressString = "";
         private HashSet<ComboBox> KeySelected = new HashSet<ComboBox>();
+
+        public string XMLName { get; } = "PressKey";
+        public string FullName { get; } = "Press Key";
         public PressKey()
         {
             InitializeComponent();
-            InitializeKeyList(new ComboBox[] { cmbKey1, cmbKey2, cmbKey3 });
-            this.Text = "Press Key";
+            foreach(ComboBox cmbKey in this.Controls.OfType<ComboBox>())
+            {
+                KeySelected.Add(cmbKey);
+            }
+            InitializeKeyList(KeySelected);
         }
         public void Run()
         {
+            MessageBox.Show(KeyPressString);
             if (KeyPressString.Equals(""))
                 return;
             Keyboard.KeyPress(KeyPressString);
@@ -29,16 +36,19 @@ namespace CommandUserControl
 
         public string Serialize()
         {
-            string output = "<PressKey>\n";
+            string output = "<" + XMLName + ">\n";
             foreach (ComboBox key in KeySelected)
             {
                 output += "\t<" + key.Name + ">" + key.Text + "</" + key.Name + ">\n";
             }
-            output += "</PressKey>\n";
+            output += "</" + XMLName + ">\n";
             return output;
         }
-
-        private void InitializeKeyList(ComboBox[] keycmb)
+        public ICommand Deserialize(string content)
+        {
+            return this;
+        }
+        private void InitializeKeyList(HashSet<ComboBox> keycmb)
         {
             foreach (ComboBox key in keycmb)
             {
@@ -46,9 +56,9 @@ namespace CommandUserControl
 
                 key.DropDownStyle = ComboBoxStyle.DropDownList;
                 key.BindingContext = new BindingContext();
-                key.DisplayMember = nameof(KeyItem.Name);
-                key.ValueMember = nameof(KeyItem.KeyCode);
-                key.DataSource = KeyItem.List;
+                key.DataSource = KeyItem.AllKeys;
+                key.DisplayMember = nameof(KeyItem.FullName);
+                key.ValueMember = nameof(KeyItem.ValueName);
                 key.SelectedIndex = 0;
 
                 key.TextChanged += new EventHandler(UpdateKeys);
@@ -57,12 +67,9 @@ namespace CommandUserControl
         private void UpdateKeys(object sender, EventArgs e)
         {
             ComboBox cmbSender = (sender as ComboBox);
-            if (!KeySelected.Remove(cmbSender))
-            {
-                KeySelected.Add(cmbSender);
-            };
+            KeySelected.Add(cmbSender);
 
-            KeyPressString = Keyboard.FormatKeyStringArray(KeySelected.Select(cmb => cmb.Text).ToList());
+            KeyPressString = Keyboard.FormatKeyStringArray(KeySelected.Select(cmb => cmb.SelectedValue.ToString()).ToList());
         }
     }
 }

@@ -3,15 +3,14 @@
 public struct Command
 {
     public string Name { get; }
+    public string XMLName { get; }
     public UserControl Control { get; }
 
-    public Command(UserControl control, string name = "") : this()
+    public Command(UserControl control) : this()
     {
         Control = control;
-        if (name == "")
-            Name = control.Text;
-        else
-            Name = name;
+        Name = (control as ICommand).FullName;
+        XMLName = (control as ICommand).XMLName;
 
     }
 }

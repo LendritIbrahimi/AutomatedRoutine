@@ -5,27 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-class KeyItem
+public struct KeyItem
 {
-    public static IReadOnlyList<KeyItem> List { get; } = CreateList();
-
-    private static IReadOnlyList<KeyItem> CreateList()
+    public static List<KeyItem> AllKeys = CreateKeys();
+    public static List<KeyItem> CreateKeys()
     {
-        String[] names = Enum.GetNames(typeof(System.Windows.Forms.Keys));
-        Key[] values = (Key[])Enum.GetValues(typeof(System.Windows.Forms.Keys));
+        List<KeyItem> keys = new List<KeyItem>();
 
-        return Enumerable
-            .Range(0, names.Length)
-            .Select(i => new KeyItem(values[i], names[i]))
-            .ToList();
+        keys.Add(new KeyItem("BACKSPACE", "{BACKSPACE}"));
+        keys.Add(new KeyItem("BREAK", "{BREAK}"));
+        keys.Add(new KeyItem("CAPS LOCK", "{CAPSLOCK}"));
+        keys.Add(new KeyItem("DELETE", "{DELETE}"));
+        keys.Add(new KeyItem("DOWN ARROW", "{DOWN}"));
+
+        return keys;
     }
-
-    private KeyItem(Key key, String name)
+    public KeyItem(string name, string value)
     {
-        this.KeyCode = key;
-        this.Name = name ?? throw new ArgumentNullException(nameof(name));
+        FullName = name;
+        ValueName = value;
     }
-
-    public Key KeyCode { get; }
-    public String Name { get; }
+    public string ValueName { get; }
+    public string FullName { get; }
 }

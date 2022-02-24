@@ -13,7 +13,6 @@ namespace AutomatedRoutine
     public partial class CommandContainer : UserControl
     {
         private List<Command> dataSource = new List<Command>();
-        public int cmbIndex = 1;
         public CommandContainer()
         {
             InitializeComponent();
@@ -31,7 +30,7 @@ namespace AutomatedRoutine
             // setup data binding
             cmbMain.DataSource = this.dataSource;
             cmbMain.DisplayMember = "Name";
-            cmbMain.ValueMember = "Name";
+            cmbMain.ValueMember = "xMLName";
 
             // make it read-only
             cmbMain.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -40,7 +39,6 @@ namespace AutomatedRoutine
         private void cmbMain_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeCommand(cmbMain.SelectedIndex);
-            cmbIndex = cmbMain.SelectedIndex;
         }
 
         private void ChangeCommand(int index)

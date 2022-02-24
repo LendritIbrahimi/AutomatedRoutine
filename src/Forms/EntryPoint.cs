@@ -22,18 +22,20 @@ public partial class EntryPoint : Form
 
     public void ExecuteCommands()
     {
-        List<UserControl> comControl = GetCommandFromPanel();
+        List<CommandContainer> comControl = GetCommandFromPanel();
 
-        foreach (UserControl content in comControl)
+        foreach (CommandContainer control in comControl)
         {
             if (!isRunning)
                 return;
-            content.Padding = new Padding(3);
+            UserControl content = control
+                .Controls.Find("pnlContent", true).First()
+                .Controls.OfType<UserControl>().First();
+            control.Padding = new Padding(4);
 
             ((ICommand)content).Run();
-            Thread.Sleep(1000);
 
-            content.Padding = new Padding(0);
+            control.Padding = new Padding(1);
         }
     }
 
@@ -60,10 +62,9 @@ public partial class EntryPoint : Form
     {
         // functionality
         isRunning = false;
-        if (runningThread.IsAlive)
-            runningThread.Abort(); ;
-
         // not safe
+        if (runningThread.IsAlive)
+            runningThread.Abort();
 
 
         // design & event triggering
@@ -81,28 +82,62 @@ public partial class EntryPoint : Form
         pnlContainer.Controls.Add(new CommandContainer());
     }
 
-    private List<UserControl> GetCommandFromPanel()
+    private List<CommandContainer> GetCommandFromPanel()
     {
-        List<UserControl> comControl = new List<UserControl>();
+        List<CommandContainer> comControl = new List<CommandContainer>();
         foreach (CommandContainer cmdControl in this.pnlContainer.Controls.OfType<CommandContainer>())
         {
-            UserControl content = cmdControl
-               .Controls.Find("pnlContent", true).First()
-               .Controls.OfType<UserControl>().First();
-            comControl.Add(content);
+
+            comControl.Add(cmdControl);
         }
         return comControl;
     }
 
+    private void SetCommandToPanel(List<CommandContainer> comContainer)
+    {
+        this.pnlContainer.Controls.Clear();
+        this.pnlContainer.Controls.AddRange(comContainer.Select(cont => (cont as Control)).ToArray());
+    }
+
     private void tsSave_Click(object sender, EventArgs e)
     {
-        SaveFileDialog saveXML = new SaveFileDialog();
-        saveXML.Filter = "XML Files (*.xml)|*.xml|Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-        saveXML.Title = "Save File As";
-
-        if (saveXML.ShowDialog() == DialogResult.OK)
+        using (SaveFileDialog saveXML = new SaveFileDialog())
         {
-            File.WriteAllText(saveXML.FileName, Serialize.UserControlToXML(GetCommandFromPanel()));
+            saveXML.Filter = "XML Files (*.xml)|*.xml|Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            saveXML.Title = "Save File As";
+
+            if (saveXML.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(saveXML.FileName, Serialize.UserControlToXML(GetCommandFromPanel().Select(control => control
+                .Controls.Find("pnlContent", true).First()
+                .Controls.OfType<UserControl>().First()).ToList()
+                    ));
+            }
         }
+    }
+
+    private void tsOpen_Click(object sender, EventArgs e)
+    {
+        string fileContent = string.Empty;
+        string filePath = string.Empty;
+        using (OpenFileDialog openFileDialog = new OpenFileDialog())
+        {
+            openFileDialog.InitialDirectory = "c:\\";
+            openFileDialog.Filter = "XML Files (*.xml)|*.xml|Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            openFileDialog.RestoreDirectory = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filePath = openFileDialog.FileName;
+                Stream fileStream = openFileDialog.OpenFile();
+
+                using (StreamReader reader = new StreamReader(fileStream))
+                {
+                    fileContent = reader.ReadToEnd();
+                }
+                SetCommandToPanel(Serialize.XMLToUserControl(fileContent));
+            }
+        }
+
     }
 }

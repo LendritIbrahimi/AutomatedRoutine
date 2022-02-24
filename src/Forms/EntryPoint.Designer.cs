@@ -76,8 +76,8 @@ partial class EntryPoint
             this.pnlContainer.Location = new System.Drawing.Point(14, 63);
             this.pnlContainer.Margin = new System.Windows.Forms.Padding(4);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlContainer.Size = new System.Drawing.Size(1040, 400);
+            this.pnlContainer.Padding = new System.Windows.Forms.Padding(4, 8, 4, 4);
+            this.pnlContainer.Size = new System.Drawing.Size(1060, 400);
             this.pnlContainer.TabIndex = 5;
             // 
             // btnAdd
@@ -87,7 +87,7 @@ partial class EntryPoint
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(894, 471);
+            this.btnAdd.Location = new System.Drawing.Point(914, 471);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(160, 38);
@@ -104,7 +104,7 @@ partial class EntryPoint
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1087, 28);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -123,6 +123,7 @@ partial class EntryPoint
             this.tsOpen.Name = "tsOpen";
             this.tsOpen.Size = new System.Drawing.Size(224, 26);
             this.tsOpen.Text = "Open";
+            this.tsOpen.Click += new System.EventHandler(this.tsOpen_Click);
             // 
             // tsSave
             // 
@@ -157,7 +158,7 @@ partial class EntryPoint
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1067, 532);
+            this.ClientSize = new System.Drawing.Size(1087, 532);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.btnStart);
