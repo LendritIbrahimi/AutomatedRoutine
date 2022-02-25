@@ -58,8 +58,7 @@ namespace CommandUserControl
             // 
             // WriteText
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.Controls.Add(this.lblText);
             this.Controls.Add(this.txtInput);
             this.Margin = new System.Windows.Forms.Padding(4);

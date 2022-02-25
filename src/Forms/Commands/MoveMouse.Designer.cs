@@ -154,8 +154,7 @@
             // 
             // MoveMouse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.Controls.Add(this.chbIncrement);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.mtxTime);

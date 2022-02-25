@@ -74,8 +74,7 @@ namespace CommandUserControl
             // 
             // MouseClick
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.Controls.Add(this.rbLeft);
             this.Controls.Add(this.rbRight);
             this.Controls.Add(this.label1);
