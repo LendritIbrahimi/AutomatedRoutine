@@ -38,7 +38,7 @@ namespace CommandUserControl
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 11);
+            this.label1.Location = new System.Drawing.Point(11, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 20);
@@ -50,7 +50,7 @@ namespace CommandUserControl
             this.rbRight.AutoSize = true;
             this.rbRight.BackColor = System.Drawing.Color.Transparent;
             this.rbRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbRight.Location = new System.Drawing.Point(83, 34);
+            this.rbRight.Location = new System.Drawing.Point(80, 34);
             this.rbRight.Name = "rbRight";
             this.rbRight.Size = new System.Drawing.Size(69, 24);
             this.rbRight.TabIndex = 4;
@@ -64,7 +64,7 @@ namespace CommandUserControl
             this.rbLeft.Checked = true;
             this.rbLeft.FlatAppearance.BorderSize = 0;
             this.rbLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbLeft.Location = new System.Drawing.Point(18, 34);
+            this.rbLeft.Location = new System.Drawing.Point(15, 34);
             this.rbLeft.Name = "rbLeft";
             this.rbLeft.Size = new System.Drawing.Size(59, 24);
             this.rbLeft.TabIndex = 4;

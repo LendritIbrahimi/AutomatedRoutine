@@ -64,6 +64,12 @@
     <Compile Include="Classes\Misc\Command.cs" />
     <Compile Include="Classes\Misc\CommandInstances.cs" />
     <Compile Include="Classes\Misc\KeyItem.cs" />
+    <Compile Include="Forms\Commands\WriteText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Commands\WriteText.Designer.cs">
+      <DependentUpon>WriteText.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Misc\CommandContainer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Commands\MouseClick.resx">
       <DependentUpon>MouseClick.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Commands\WriteText.resx">
+      <DependentUpon>WriteText.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Misc\CommandContainer.resx">
       <DependentUpon>CommandContainer.cs</DependentUpon>

@@ -48,7 +48,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(18, 12);
+            this.label1.Location = new System.Drawing.Point(11, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 20);
@@ -69,9 +69,9 @@
             // 
             // pnlCheckbox1
             // 
-            this.pnlCheckbox1.BackColor = System.Drawing.Color.DarkGray;
+            this.pnlCheckbox1.BackColor = System.Drawing.Color.Gray;
             this.pnlCheckbox1.Controls.Add(this.cmbKey1);
-            this.pnlCheckbox1.Location = new System.Drawing.Point(22, 36);
+            this.pnlCheckbox1.Location = new System.Drawing.Point(16, 35);
             this.pnlCheckbox1.Name = "pnlCheckbox1";
             this.pnlCheckbox1.Size = new System.Drawing.Size(131, 24);
             this.pnlCheckbox1.TabIndex = 14;
@@ -106,9 +106,9 @@
             // 
             // pnlCheckbox2
             // 
-            this.pnlCheckbox2.BackColor = System.Drawing.Color.DarkGray;
+            this.pnlCheckbox2.BackColor = System.Drawing.Color.Gray;
             this.pnlCheckbox2.Controls.Add(this.cmbKey2);
-            this.pnlCheckbox2.Location = new System.Drawing.Point(159, 36);
+            this.pnlCheckbox2.Location = new System.Drawing.Point(153, 35);
             this.pnlCheckbox2.Name = "pnlCheckbox2";
             this.pnlCheckbox2.Size = new System.Drawing.Size(131, 24);
             this.pnlCheckbox2.TabIndex = 14;
@@ -128,9 +128,9 @@
             // 
             // pnlCheckbox3
             // 
-            this.pnlCheckbox3.BackColor = System.Drawing.Color.DarkGray;
+            this.pnlCheckbox3.BackColor = System.Drawing.Color.Gray;
             this.pnlCheckbox3.Controls.Add(this.cmbKey3);
-            this.pnlCheckbox3.Location = new System.Drawing.Point(296, 36);
+            this.pnlCheckbox3.Location = new System.Drawing.Point(290, 35);
             this.pnlCheckbox3.Name = "pnlCheckbox3";
             this.pnlCheckbox3.Size = new System.Drawing.Size(131, 24);
             this.pnlCheckbox3.TabIndex = 14;
@@ -152,7 +152,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pnlCheckbox1);
