@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace CommandUserControl
 {
@@ -43,14 +44,24 @@ namespace CommandUserControl
             foreach (ComboBox key in KeySelected)
             {
                 if (key.Visible)
-                    output += "\t<" + key.Name + ">" + key.Text + "</" + key.Name + ">\n";
+                    output += "\t<" + key.Name + ">" + key.SelectedValue.ToString() + "</" + key.Name + ">\n";
             }
             output += "</" + XMLName + ">\n";
             return output;
         }
         public ICommand Deserialize(string content)
         {
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(content);
+            foreach (ComboBox key in KeySelected)
+            {
 
+                if (doc.SelectSingleNode(XMLName + "/" + key.Name) != null)
+                {
+                    key.Parent.Visible = true;
+                    key.SelectedValue = doc.SelectSingleNode(XMLName + "/" + key.Name).InnerText;
+                }
+            }
             return this;
         }
         private void InitializeKeyList(HashSet<ComboBox> cmbKeys)
