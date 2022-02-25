@@ -17,6 +17,7 @@ public partial class EntryPoint : Form
     private static Thread runningThread;
     private static int repetitionNumber = 1;
     private static int sleepBetweenSteps = 0;
+    public static bool infinite = false;
     public EntryPoint()
     {
         InitializeComponent();
@@ -27,7 +28,7 @@ public partial class EntryPoint : Form
     {
         List<CommandContainer> comControl = GetCommandFromPanel();
         int repetitionCopy = repetitionNumber;
-        while (repetitionCopy > 0)
+        while (repetitionCopy > 0 || infinite)
         {
             foreach (CommandContainer control in comControl)
             {
@@ -183,4 +184,11 @@ public partial class EntryPoint : Form
         }
     }
 
+    private void chbRepetitionType_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if(chbRepetitionType.SelectedIndex == 1)
+        {
+            infinite = true;
+        }
+    }
 }

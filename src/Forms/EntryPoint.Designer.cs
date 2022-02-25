@@ -163,13 +163,13 @@ partial class EntryPoint
             this.chbRepetitionType.FormattingEnabled = true;
             this.chbRepetitionType.Items.AddRange(new object[] {
             "Number of repetitions",
-            "Time in seconds",
             "Infinite repetition"});
             this.chbRepetitionType.Location = new System.Drawing.Point(0, 0);
             this.chbRepetitionType.Name = "chbRepetitionType";
             this.chbRepetitionType.Size = new System.Drawing.Size(188, 26);
             this.chbRepetitionType.TabIndex = 13;
             this.chbRepetitionType.Tag = "";
+            this.chbRepetitionType.SelectedIndexChanged += new System.EventHandler(this.chbRepetitionType_SelectedIndexChanged);
             // 
             // lblRepetitions
             // 
