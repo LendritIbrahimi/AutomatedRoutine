@@ -25,7 +25,7 @@ namespace CommandUserControl
         public string Serialize()
         {
             string output = "<" + XMLName + ">\n";
-            output += "<right>" + rbRight.Checked + " </right>";
+            output += "<right>" + rbRight.Checked + "</right>";
 
             output += "</" + XMLName + ">\n";
             return output;

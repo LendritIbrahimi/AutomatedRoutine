@@ -54,6 +54,7 @@
     <Compile Include="Classes\Commands\Screen.cs" />
     <Compile Include="Classes\Misc\ControlsFinder.cs" />
     <Compile Include="Classes\Misc\Serialize.cs" />
+    <Compile Include="Classes\Misc\XMLContainer.cs" />
     <Compile Include="Forms\Commands\MouseClick.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -72,6 +72,11 @@ public partial class EntryPoint : Form
         ToggleStartButton();
     }
 
+    private void ParseSettings()
+    {
+        int.TryParse(txtRepetitions.Text, out repetitionNumber);
+        int.TryParse(txtStepTime.Text, out sleepBetweenSteps);
+    }
 
     private void ToggleStartButton()
     {
@@ -83,8 +88,7 @@ public partial class EntryPoint : Form
             btnStart.Text = "Stop (F11)";
             btnStart.BackColor = Color.IndianRed;
 
-            int.TryParse(txtRepetitions.Text, out repetitionNumber);
-            int.TryParse(txtStepTime.Text, out sleepBetweenSteps);
+            ParseSettings();
 
             runningThread = new Thread(ExecuteCommands);
             runningThread.IsBackground = true;
@@ -136,10 +140,16 @@ public partial class EntryPoint : Form
 
             if (saveXML.ShowDialog() == DialogResult.OK)
             {
-                File.WriteAllText(saveXML.FileName, Serialize.UserControlToXML(GetCommandFromPanel().Select(control => control
-                .Controls.Find("pnlContent", true).First()
-                .Controls.OfType<UserControl>().First()).ToList()
-                    ));
+                ParseSettings();
+                XMLContainer container = new XMLContainer();
+                container.Commands = GetCommandFromPanel();
+
+                container.RepetitionComboboxIndex = chbRepetitionType.SelectedIndex;
+                container.Repetitions = repetitionNumber;
+                container.StepSize = sleepBetweenSteps;
+                container.FinishedIndex = chbFinished.SelectedIndex;
+
+                File.WriteAllText(saveXML.FileName, Serialize.ContainerToXML(container));
             }
         }
     }
@@ -163,7 +173,13 @@ public partial class EntryPoint : Form
                 {
                     fileContent = reader.ReadToEnd();
                 }
-                SetCommandToPanel(Serialize.XMLToUserControl(fileContent));
+                SetCommandToPanel(Serialize.XMLToCommandContainer(fileContent));
+
+                XMLContainer container = Serialize.XMLToSettings(fileContent);
+                txtRepetitions.Text = container.Repetitions.ToString();
+                txtStepTime.Text = container.StepSize.ToString();
+                chbRepetitionType.SelectedIndex = container.RepetitionComboboxIndex;
+                chbFinished.SelectedIndex = container.FinishedIndex;
             }
         }
 
