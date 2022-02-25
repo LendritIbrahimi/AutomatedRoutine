@@ -83,7 +83,6 @@ namespace CommandUserControl
                 .Where(a => a.Visible)
                 .Select(cmb => cmb.SelectedValue.ToString())
                 .ToList());
-            MessageBox.Show(KeyPressString);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

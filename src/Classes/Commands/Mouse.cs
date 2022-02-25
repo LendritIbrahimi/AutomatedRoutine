@@ -20,12 +20,24 @@ class Mouse
     private const int MOUSEEVENTF_RIGHTUP = 0x10;
     private const int MOUSEEVENTF_WHEEL = 0x0800;
 
-    public static void Click()
+    public static void LeftClick()
     {
         //Call the imported function with the cursor's current position
         uint X = (uint)Cursor.Position.X;
         uint Y = (uint)Cursor.Position.Y;
-        mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, X, Y, 0, 0);
+        mouse_event(MOUSEEVENTF_LEFTDOWN, X, Y, 0, 0);
+        Thread.Sleep(50);
+        mouse_event(MOUSEEVENTF_LEFTUP, X, Y, 0, 0);
+    }
+    public static void RightClick()
+    {
+        //Call the imported function with the cursor's current position
+        uint X = (uint)Cursor.Position.X;
+        uint Y = (uint)Cursor.Position.Y;
+
+        mouse_event(MOUSEEVENTF_RIGHTDOWN, X, Y, 0, 0);
+        Thread.Sleep(50);
+        mouse_event(MOUSEEVENTF_RIGHTUP, X, Y, 0, 0);
     }
     #endregion
     public static void Move(int x, int y, int t, bool incremental = false)

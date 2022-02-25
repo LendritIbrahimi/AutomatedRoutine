@@ -25,6 +25,7 @@ namespace CommandUserControl
         }
         public string Serialize()
         {
+            int.TryParse(txtTime.Text, out time);
             string output = "<"+ XMLName + ">\n";
 
             output += "\t<time>" + time + "</time>\n";

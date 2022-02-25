@@ -49,9 +49,9 @@ partial class EntryPoint
             this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblExtension = new System.Windows.Forms.Label();
-            this.txtStepTime = new System.Windows.Forms.TextBox();
             this.lblBetweenSteps = new System.Windows.Forms.Label();
+            this.txtStepTime = new System.Windows.Forms.TextBox();
+            this.lblExtension = new System.Windows.Forms.Label();
             this.pnlContainer.SuspendLayout();
             this.pnlRepetitions.SuspendLayout();
             this.pnlCheckbox.SuspendLayout();
@@ -307,6 +307,27 @@ partial class EntryPoint
             this.panel1.Size = new System.Drawing.Size(372, 75);
             this.panel1.TabIndex = 17;
             // 
+            // lblBetweenSteps
+            // 
+            this.lblBetweenSteps.AutoSize = true;
+            this.lblBetweenSteps.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBetweenSteps.Location = new System.Drawing.Point(8, 37);
+            this.lblBetweenSteps.Margin = new System.Windows.Forms.Padding(4);
+            this.lblBetweenSteps.Name = "lblBetweenSteps";
+            this.lblBetweenSteps.Size = new System.Drawing.Size(216, 20);
+            this.lblBetweenSteps.TabIndex = 17;
+            this.lblBetweenSteps.Text = "Miliseconds between steps:";
+            // 
+            // txtStepTime
+            // 
+            this.txtStepTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStepTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStepTime.Location = new System.Drawing.Point(226, 36);
+            this.txtStepTime.Name = "txtStepTime";
+            this.txtStepTime.Size = new System.Drawing.Size(107, 24);
+            this.txtStepTime.TabIndex = 16;
+            this.txtStepTime.Text = "250";
+            // 
             // lblExtension
             // 
             this.lblExtension.AutoSize = true;
@@ -318,27 +339,6 @@ partial class EntryPoint
             this.lblExtension.Size = new System.Drawing.Size(91, 20);
             this.lblExtension.TabIndex = 3;
             this.lblExtension.Text = "Extensions";
-            // 
-            // txtStepTime
-            // 
-            this.txtStepTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtStepTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStepTime.Location = new System.Drawing.Point(226, 36);
-            this.txtStepTime.Name = "txtStepTime";
-            this.txtStepTime.Size = new System.Drawing.Size(107, 24);
-            this.txtStepTime.TabIndex = 16;
-            this.txtStepTime.Text = "1000";
-            // 
-            // lblBetweenSteps
-            // 
-            this.lblBetweenSteps.AutoSize = true;
-            this.lblBetweenSteps.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBetweenSteps.Location = new System.Drawing.Point(8, 37);
-            this.lblBetweenSteps.Margin = new System.Windows.Forms.Padding(4);
-            this.lblBetweenSteps.Name = "lblBetweenSteps";
-            this.lblBetweenSteps.Size = new System.Drawing.Size(216, 20);
-            this.lblBetweenSteps.TabIndex = 17;
-            this.lblBetweenSteps.Text = "Miliseconds between steps:";
             // 
             // EntryPoint
             // 
