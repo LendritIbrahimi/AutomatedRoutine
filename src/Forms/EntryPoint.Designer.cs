@@ -87,7 +87,7 @@ partial class EntryPoint
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(164, 52);
             this.btnStart.TabIndex = 6;
-            this.btnStart.Text = "Start";
+            this.btnStart.Text = "Start (F11)";
             this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.BtnStart_Click);
             // 
@@ -158,12 +158,11 @@ partial class EntryPoint
             this.chbRepetitionType.BackColor = System.Drawing.Color.WhiteSmoke;
             this.chbRepetitionType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chbRepetitionType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.chbRepetitionType.Enabled = false;
             this.chbRepetitionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbRepetitionType.FormattingEnabled = true;
             this.chbRepetitionType.Items.AddRange(new object[] {
             "Number of repetitions",
-            "Infinite repetition"});
+            "Infinite repetitions"});
             this.chbRepetitionType.Location = new System.Drawing.Point(0, 0);
             this.chbRepetitionType.Name = "chbRepetitionType";
             this.chbRepetitionType.Size = new System.Drawing.Size(188, 26);

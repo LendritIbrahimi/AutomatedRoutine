@@ -97,7 +97,7 @@ public partial class EntryPoint : Form
             btnStart.Click -= BtnStop_Click;
             btnStart.Click += BtnStart_Click;
 
-            btnStart.Text = "Start";
+            btnStart.Text = "Start (F11)";
             btnStart.BackColor = Color.SeaGreen;
 
             // not safe
@@ -186,9 +186,7 @@ public partial class EntryPoint : Form
 
     private void chbRepetitionType_SelectedIndexChanged(object sender, EventArgs e)
     {
-        if(chbRepetitionType.SelectedIndex == 1)
-        {
-            infinite = true;
-        }
+        infinite = chbRepetitionType.Text.ToLower().Contains("infinite");
+        txtRepetitions.Visible = !infinite;
     }
 }
