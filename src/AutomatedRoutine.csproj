@@ -60,7 +60,6 @@
     <Compile Include="Forms\Commands\MouseClick.Designer.cs">
       <DependentUpon>MouseClick.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Classes\Misc\Command.cs" />
     <Compile Include="Classes\Misc\CommandInstances.cs" />
     <Compile Include="Classes\Misc\KeyItem.cs" />
@@ -94,6 +93,7 @@
     <Compile Include="Forms\Commands\MoveMouse.Designer.cs">
       <DependentUpon>MoveMouse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\IInterruptable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,10 +139,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Styles\" />
+    <None Include="Resources\save.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\save.png" />
+    <Content Include="Resources\routine.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

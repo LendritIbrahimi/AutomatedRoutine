@@ -49,6 +49,7 @@
             this.mtxXCord.PromptChar = ' ';
             this.mtxXCord.Size = new System.Drawing.Size(67, 22);
             this.mtxXCord.TabIndex = 1;
+            this.mtxXCord.Text = "0";
             this.mtxXCord.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtxXCord.ValidatingType = typeof(int);
             this.mtxXCord.MouseEnter += new System.EventHandler(this.ClearNotEmpty);
@@ -74,6 +75,7 @@
             this.mtxYCord.PromptChar = ' ';
             this.mtxYCord.Size = new System.Drawing.Size(68, 22);
             this.mtxYCord.TabIndex = 3;
+            this.mtxYCord.Text = "0";
             this.mtxYCord.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // label3
@@ -94,11 +96,11 @@
             this.mtxTime.HidePromptOnLeave = true;
             this.mtxTime.Location = new System.Drawing.Point(553, 35);
             this.mtxTime.Margin = new System.Windows.Forms.Padding(4);
-            this.mtxTime.Mask = "00000";
             this.mtxTime.Name = "mtxTime";
             this.mtxTime.PromptChar = ' ';
             this.mtxTime.Size = new System.Drawing.Size(137, 22);
             this.mtxTime.TabIndex = 5;
+            this.mtxTime.Text = "1000";
             this.mtxTime.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtxTime.ValidatingType = typeof(int);
             // 
@@ -142,9 +144,10 @@
             this.chbIncrement.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.chbIncrement.FlatAppearance.BorderSize = 2;
             this.chbIncrement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chbIncrement.Location = new System.Drawing.Point(238, 39);
+            this.chbIncrement.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbIncrement.Location = new System.Drawing.Point(233, 35);
             this.chbIncrement.Name = "chbIncrement";
-            this.chbIncrement.Size = new System.Drawing.Size(99, 21);
+            this.chbIncrement.Size = new System.Drawing.Size(114, 24);
             this.chbIncrement.TabIndex = 7;
             this.chbIncrement.Text = "Incremental";
             this.chbIncrement.UseVisualStyleBackColor = false;

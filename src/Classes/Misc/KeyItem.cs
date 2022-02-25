@@ -12,6 +12,7 @@ public struct KeyItem
     {
         List<KeyItem> keys = new List<KeyItem>();
 
+        keys.Add(new KeyItem("NONE", ""));
         keys.Add(new KeyItem("BACKSPACE", "{BACKSPACE}"));
         keys.Add(new KeyItem("BREAK", "{BREAK}"));
         keys.Add(new KeyItem("CAPS LOCK", "{CAPSLOCK}"));

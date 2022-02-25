@@ -14,7 +14,7 @@ class Keyboard
     static extern int SetForegroundWindow(IntPtr point);
     public static void KeyPress(string key)
     {
-        SendKeys.Send(key);
+        SendKeys.SendWait(key);
 
     }
     public static string FormatKeyStringArray(List<string> keys)

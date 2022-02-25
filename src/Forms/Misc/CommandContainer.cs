@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace AutomatedRoutine
 {
@@ -17,7 +18,6 @@ namespace AutomatedRoutine
         {
             InitializeComponent();
             AddToComboBox();
-            CheckForIllegalCrossThreadCalls = false;
         }
         public List<Command> GetData()
         {
@@ -51,5 +51,6 @@ namespace AutomatedRoutine
         {
             this.Parent.Controls.Remove(this);
         }
+
     }
 }

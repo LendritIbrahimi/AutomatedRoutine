@@ -34,19 +34,20 @@ class Mouse
         {
             t = Math.Max(t, 1);
             t = Math.Min(t, 600000);
-            float loopLength = t / 10;
-            float moveX = Cursor.Position.X;
-            float moveY = Cursor.Position.Y;
 
-            float moveIntX = (incremental ? x : (x - moveX)) / loopLength;
-            float moveIntY = (incremental ? y : (y - moveY)) / loopLength;
-            for (int i = 0; i < loopLength;)
+            float loopLength = t / 10;
+            for (int i = 0; i < loopLength; i++)
             {
+                float moveX = Cursor.Position.X;
+                float moveY = Cursor.Position.Y;
+
+                float moveIntX = incremental ? x / loopLength : (x - moveX) / (loopLength - i);
+                float moveIntY = incremental ? y / loopLength : (y - moveY) / (loopLength - i);
+
                 moveX += moveIntX;
                 moveY += moveIntY;
                 Cursor.Position = new Point((int)moveX, (int)moveY);
                 Thread.Sleep(10);
-                i++;
             }
         }
         if (!incremental)

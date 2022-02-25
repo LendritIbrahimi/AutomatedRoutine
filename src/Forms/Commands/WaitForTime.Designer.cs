@@ -54,6 +54,7 @@
             this.txtTime.PromptChar = ' ';
             this.txtTime.Size = new System.Drawing.Size(164, 22);
             this.txtTime.TabIndex = 4;
+            this.txtTime.Text = "1000";
             this.txtTime.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.txtTime.ValidatingType = typeof(int);
             // 
@@ -75,7 +76,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTime);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WaitForTime";
             this.Size = new System.Drawing.Size(715, 70);
             this.ResumeLayout(false);

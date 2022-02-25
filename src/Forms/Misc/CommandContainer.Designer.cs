@@ -42,10 +42,10 @@
             this.pnlCombo.Controls.Add(this.label1);
             this.pnlCombo.Controls.Add(this.cmbMain);
             this.pnlCombo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlCombo.Location = new System.Drawing.Point(1, 1);
+            this.pnlCombo.Location = new System.Drawing.Point(0, 0);
             this.pnlCombo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlCombo.Name = "pnlCombo";
-            this.pnlCombo.Size = new System.Drawing.Size(157, 73);
+            this.pnlCombo.Size = new System.Drawing.Size(157, 75);
             this.pnlCombo.TabIndex = 0;
             // 
             // label1
@@ -80,10 +80,10 @@
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.Location = new System.Drawing.Point(873, 1);
+            this.btnRemove.Location = new System.Drawing.Point(872, 0);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(146, 73);
+            this.btnRemove.Size = new System.Drawing.Size(148, 75);
             this.btnRemove.TabIndex = 7;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = false;
@@ -93,9 +93,9 @@
             // 
             this.pnlContent.BackColor = System.Drawing.Color.White;
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlContent.Location = new System.Drawing.Point(158, 1);
+            this.pnlContent.Location = new System.Drawing.Point(157, 0);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(715, 73);
+            this.pnlContent.Size = new System.Drawing.Size(715, 75);
             this.pnlContent.TabIndex = 2;
             // 
             // CommandContainer
@@ -107,9 +107,8 @@
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlCombo);
-            this.Margin = new System.Windows.Forms.Padding(4, 0, 4, 15);
+            this.Margin = new System.Windows.Forms.Padding(4, 0, 4, 10);
             this.Name = "CommandContainer";
-            this.Padding = new System.Windows.Forms.Padding(1);
             this.Size = new System.Drawing.Size(1020, 75);
             this.pnlCombo.ResumeLayout(false);
             this.pnlCombo.PerformLayout();

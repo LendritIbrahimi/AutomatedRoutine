@@ -29,48 +29,56 @@ namespace CommandUserControl
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtDuration = new System.Windows.Forms.TextBox();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.lblHold = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rbRight = new System.Windows.Forms.RadioButton();
+            this.rbLeft = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
-            // txtDuration
+            // label1
             // 
-            this.txtDuration.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDuration.Location = new System.Drawing.Point(188, 40);
-            this.txtDuration.Name = "txtDuration";
-            this.txtDuration.Size = new System.Drawing.Size(136, 22);
-            this.txtDuration.TabIndex = 15;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Mouse Button";
             // 
-            // lblTime
+            // rbRight
             // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(18, 39);
-            this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(163, 20);
-            this.lblTime.TabIndex = 14;
-            this.lblTime.Text = "Time in miliseconds:";
+            this.rbRight.AutoSize = true;
+            this.rbRight.BackColor = System.Drawing.Color.Transparent;
+            this.rbRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbRight.Location = new System.Drawing.Point(83, 34);
+            this.rbRight.Name = "rbRight";
+            this.rbRight.Size = new System.Drawing.Size(69, 24);
+            this.rbRight.TabIndex = 4;
+            this.rbRight.Text = "Right";
+            this.rbRight.UseVisualStyleBackColor = false;
             // 
-            // lblHold
+            // rbLeft
             // 
-            this.lblHold.AutoSize = true;
-            this.lblHold.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHold.Location = new System.Drawing.Point(18, 12);
-            this.lblHold.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHold.Name = "lblHold";
-            this.lblHold.Size = new System.Drawing.Size(118, 20);
-            this.lblHold.TabIndex = 13;
-            this.lblHold.Text = "Hold Duration:";
+            this.rbLeft.AutoSize = true;
+            this.rbLeft.BackColor = System.Drawing.Color.Transparent;
+            this.rbLeft.Checked = true;
+            this.rbLeft.FlatAppearance.BorderSize = 0;
+            this.rbLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbLeft.Location = new System.Drawing.Point(18, 34);
+            this.rbLeft.Name = "rbLeft";
+            this.rbLeft.Size = new System.Drawing.Size(59, 24);
+            this.rbLeft.TabIndex = 4;
+            this.rbLeft.TabStop = true;
+            this.rbLeft.Text = "Left";
+            this.rbLeft.UseVisualStyleBackColor = false;
             // 
             // MouseClick
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtDuration);
-            this.Controls.Add(this.lblTime);
-            this.Controls.Add(this.lblHold);
+            this.Controls.Add(this.rbLeft);
+            this.Controls.Add(this.rbRight);
+            this.Controls.Add(this.label1);
             this.Name = "MouseClick";
             this.Size = new System.Drawing.Size(715, 70);
             this.ResumeLayout(false);
@@ -80,8 +88,8 @@ namespace CommandUserControl
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtDuration;
-        private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Label lblHold;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton rbRight;
+        private System.Windows.Forms.RadioButton rbLeft;
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,69 +15,95 @@ public partial class EntryPoint : Form
 {
     private static bool isRunning = false;
     private static Thread runningThread;
+    private static int repetitionNumber = 1;
+    private static int sleepBetweenSteps = 0;
     public EntryPoint()
     {
         InitializeComponent();
-
+        CheckForIllegalCrossThreadCalls = false;
     }
 
     public void ExecuteCommands()
     {
         List<CommandContainer> comControl = GetCommandFromPanel();
-
-        foreach (CommandContainer control in comControl)
+        int repetitionCopy = repetitionNumber;
+        while (repetitionCopy > 0)
         {
-            if (!isRunning)
-                return;
-            UserControl content = control
-                .Controls.Find("pnlContent", true).First()
-                .Controls.OfType<UserControl>().First();
-            control.Padding = new Padding(4);
+            foreach (CommandContainer control in comControl)
+            {
+                if (!isRunning)
+                    return;
+                UserControl content = control
+                    .Controls.Find("pnlContent", true).First()
+                    .Controls.OfType<UserControl>().First();
 
-            ((ICommand)content).Run();
+                control.Padding = new Padding(4);
 
-            control.Padding = new Padding(1);
+                ((ICommand)content).Run();
+
+                Thread.Sleep(sleepBetweenSteps);
+
+                control.Padding = new Padding(0);
+            }
+            repetitionCopy--;
+            txtRepetitions.Text = repetitionCopy.ToString();
         }
+
+        isRunning = false;
+        ToggleStartButton();
     }
 
     private void BtnStart_Click(object sender, EventArgs e)
     {
         //functionality
         isRunning = true;
-        runningThread = new Thread(ExecuteCommands);
-        runningThread.IsBackground = true;
-        runningThread.Start();
-
 
         // design & event triggering
-        Button btn = (sender as Button);
-
-        btn.Click -= BtnStart_Click;
-        btn.Click += BtnStop_Click;
-
-        btn.Text = "Stop";
-        btn.BackColor = Color.IndianRed;
+        ToggleStartButton();
 
     }
     private void BtnStop_Click(object sender, EventArgs e)
     {
         // functionality
         isRunning = false;
-        // not safe
-        if (runningThread.IsAlive)
-            runningThread.Abort();
-
 
         // design & event triggering
-        Button btn = (sender as Button);
-
-        btn.Click -= BtnStop_Click;
-        btn.Click += BtnStart_Click;
-
-        btn.Text = "Start";
-        btn.BackColor = Color.SeaGreen;
+        ToggleStartButton();
     }
 
+
+    private void ToggleStartButton()
+    {
+        if (isRunning)
+        {
+            btnStart.Click -= BtnStart_Click;
+            btnStart.Click += BtnStop_Click;
+
+            btnStart.Text = "Stop (F11)";
+            btnStart.BackColor = Color.IndianRed;
+
+            int.TryParse(txtRepetitions.Text, out repetitionNumber);
+            int.TryParse(txtStepTime.Text, out sleepBetweenSteps);
+
+            runningThread = new Thread(ExecuteCommands);
+            runningThread.IsBackground = true;
+            runningThread.Start();
+        }
+        else
+        {
+            txtRepetitions.Text = repetitionNumber.ToString();
+
+            btnStart.Click -= BtnStop_Click;
+            btnStart.Click += BtnStart_Click;
+
+            btnStart.Text = "Start";
+            btnStart.BackColor = Color.SeaGreen;
+
+            // not safe
+            if (runningThread.IsAlive)
+                runningThread.Abort();
+        }
+    }
     private void btnAdd_Click(object sender, EventArgs e)
     {
         pnlContainer.Controls.Add(new CommandContainer());
@@ -140,4 +167,20 @@ public partial class EntryPoint : Form
         }
 
     }
+
+    private void EntryPoint_Load(object sender, EventArgs e)
+    {
+        chbRepetitionType.SelectedIndex = 0;
+        chbFinished.SelectedIndex = 0;
+    }
+
+    private void EntryPoint_KeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.KeyCode == Keys.F11)
+        {
+            isRunning = !isRunning;
+            ToggleStartButton();
+        }
+    }
+
 }
