@@ -165,7 +165,7 @@
             this.Controls.Add(this.pnlCheckbox2);
             this.Controls.Add(this.pnlCheckbox3);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PressKey";
             this.Size = new System.Drawing.Size(715, 70);
             this.pnlCheckbox1.ResumeLayout(false);

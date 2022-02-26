@@ -67,6 +67,12 @@
     <Compile Include="Classes\Misc\Command.cs" />
     <Compile Include="Classes\Misc\CommandInstances.cs" />
     <Compile Include="Classes\Misc\KeyItem.cs" />
+    <Compile Include="Forms\Commands\ScrollMouse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Commands\ScrollMouse.Designer.cs">
+      <DependentUpon>ScrollMouse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Commands\WriteText.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,11 +110,13 @@
       <DependentUpon>MoveMouse.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\ICommand.cs" />
-    <Compile Include="Interfaces\IInterruptable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Commands\MouseClick.resx">
       <DependentUpon>MouseClick.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Commands\ScrollMouse.resx">
+      <DependentUpon>ScrollMouse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Commands\WriteText.resx">
       <DependentUpon>WriteText.cs</DependentUpon>
